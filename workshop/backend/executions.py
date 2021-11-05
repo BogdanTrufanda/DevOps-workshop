@@ -3,7 +3,7 @@ from datetime import datetime
 
 from kubernetes_api import get_worker_names
 from helpers import run_shell_command
-from workshop.backend.config import SHELL_COMMAND_TIMEOUT_SECONDS
+from config import SHELL_COMMAND_TIMEOUT_SECONDS
 
 
 def simple_execution(app, file_path):
