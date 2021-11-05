@@ -24,7 +24,7 @@ spec:
             memory: "128Mi"
             cpu: "100m"
         command: [ "/bin/bash", "-c", "--" ]
-        args: [ "echo 'wget 'https://raw.githubusercontent.com/BogdanTrufanda/Workshop/main/mock_data/hello_world.cpp' -O ~/test.cpp && g++ ~/test.cpp -o ~/test && ~/test;' > ~/script.sh; chmod 700 ~/script.sh; while true; do sleep 30; done;" ]
+        args: [ "echo 'wget 'https://raw.githubusercontent.com/BogdanTrufanda/DevOps-workshop/main/mock_data/hello_world.cpp' -O ~/test.cpp && g++ ~/test.cpp -o ~/test && ~/test;' > ~/script.sh; chmod 700 ~/script.sh; while true; do sleep 30; done;" ]
         livenessProbe:
           exec:
             command: 

@@ -9,7 +9,7 @@ export const useMakeStats = () => {
     const { stats } = output;
 
     if (!stats?.compilation_time && !stats?.run_time) {
-      return `No stats are available.`;
+      return `No stats are available`;
     }
 
     return "Compilation time: " + (stats?.compilation_time ? stats?.compilation_time : "unknown")
