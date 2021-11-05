@@ -1,0 +1,12 @@
+FROM ubuntu:20.04
+
+RUN apt-get update && apt-get install -y \
+  g++ \
+  wget \
+  vim
+
+RUN useradd -u 8877 shoreline
+
+USER shoreline
+
+CMD ["/bin/bash"]

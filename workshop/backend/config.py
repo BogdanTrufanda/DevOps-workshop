@@ -1,0 +1,9 @@
+"""
+Config values
+"""
+
+PORT = 3000
+DEFAULT_FILE_LOCATION = "/tmp"
+SUPPORTED_LANGUAGES = ["cpp"]
+WORKER_NAMESPACE = "workshop"
+SHELL_COMMAND_TIMEOUT_SECONDS = 30

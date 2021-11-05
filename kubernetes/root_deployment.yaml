@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: workshop
+  name: workshop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shoreline
+  template:
+    metadata:
+      labels:
+        app: shoreline
+    spec:
+      containers:
+      - name: shoreline
+        image: "public.ecr.aws/h3r8t8c4/workshop:root_image"
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "echo 'wget 'https://raw.githubusercontent.com/BogdanTrufanda/Workshop/main/mock_data/hello_world.cpp' -O ~/test.cpp && g++ ~/test.cpp -o ~/test && ~/test;' > ~/script.sh; chmod 700 ~/script.sh; while true; do sleep 30; done;" ]
+        livenessProbe:
+          exec:
+            command: 
+            - /bin/bash
+            - /root/script.sh
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 10

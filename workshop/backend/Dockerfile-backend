@@ -1,0 +1,11 @@
+FROM ubuntu:20.04
+
+RUN apt update -y
+
+RUN useradd -ms /bin/bash workshop
+
+CMD ["sleep", "infinity"]
+
+
+# Install dependencies
+RUN apt-get install g++
