@@ -12,9 +12,9 @@ export const useMakeStats = () => {
       return `No stats are available`;
     }
 
-    return "Compilation time: " + (stats?.compilation_time ? stats?.compilation_time : "unknown")
+    return "Compilation time (ms): " + (stats?.compilation_time ? stats?.compilation_time : "unknown")
       + "\n"+
-      "Run time: " + (stats?.run_time ? stats?.run_time : "unknown")
+      "Run time (ms): " + (stats?.run_time ? stats?.run_time : "unknown")
 
     // const timestampCopy = stats?.timestamp
     //   ? format(stats.timestamp, "kk:mm:ss")
